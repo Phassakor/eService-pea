@@ -207,7 +207,12 @@ const ModalOTP = (props: any) => {
     console.log(otpCode);
 
     setCountClick(countClick + 1);
-    let checkOtp = await verifyOTP(otpData?.data?.oneTimePasswordId, otpCode);
+    let checkOtp = await verifyOTP(
+      otpData?.data?.oneTimePasswordId,
+      otpCode,
+      requestIdValue,
+      props?.phoneNumber
+    );
 
     setValidOtp(checkOtp);
   };
@@ -230,7 +235,7 @@ const ModalOTP = (props: any) => {
         onClick={
           props?.phoneNumber !== "" && requestIdValue !== ""
             ? () => getOtp()
-            : () => { }
+            : () => {}
         }
       >
         <IoSearch className=" " />
@@ -304,12 +309,12 @@ const ModalOTP = (props: any) => {
                           placeholder="OTP Code"
                           variant="bordered"
                           size="sm"
-
                         />
                         <Timer expiryTimestamp={timeStamp} />
                         {countClick !== 0 && validOtp?.status === false ? (
                           <div className="text-sm -mt-4 text-red-600">
                             รหัส OTP ไม่ถูกต้อง
+                            หรือท่านอาจไม่ได้เป็นเจ้าของเลขใบคำร้องนั้นๆ
                           </div>
                         ) : (
                           <></>

@@ -97,8 +97,8 @@ const StatusTable = (props?: any) => {
     const requestListData = await getRequestList(requestIdValue);
     setIsLoad(false);
 
-    if (requestListData?.status) {
-      setRequestData(requestListData.data ? requestListData.data : []);
+    if (requestListData?.result) {
+      setRequestData(requestListData.datas ? requestListData.datas : []);
     }
 
     dispatch(updateRequestId(requestId));
@@ -447,23 +447,24 @@ const StatusTable = (props?: any) => {
                 </TableHead>
                 <TableBody>
                   {/* <Row row={rows} /> */}
-                  {data
+                  {requestData
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row, index) => {
+                    .map((row: any, index) => {
                       return (
                         <React.Fragment key={index}>
                           <TableRow key={index} className="">
                             <TableCell className="">
-                              <Link href={`business-status/${row.no}`}>
+                              <Link href={`business-status/${row.request_no}`}>
                                 <div className="font-NotoSansThai text-sm">
-                                  {row.no}
+                                  {row.request_no}
                                 </div>
                               </Link>
                             </TableCell>
                             <TableCell className="lg:col-span-auto">
-                              <Link href={`business-status/${row.no}`}>
+                              <Link href={`business-status/${row.request_no}`}>
                                 <div className="font-NotoSansThai text-sm">
-                                  {row.name.substring(0, 30)}...
+                                  {/* {row.name.substring(0, 30)}... */}
+                                  {row?.service}
                                 </div>
                               </Link>
                             </TableCell>

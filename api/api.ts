@@ -220,10 +220,14 @@ export const PostFile = async (type: string, file: File) => {
 
 export const getRequestList = async (id?: any) => {
   let res = await apiInstance
-    .get("FrontEnd/ICSY3GetRequest", {
-      params: {
-        request_no: id,
+    // .get("FrontEnd/ICSY3GetRequest", {
+    .get(`https://ics-y3-dev.pea.co.th/api-external/requests/list/${id}`, {
+      headers: {
+        Apikey: "MEvyDTsh3BQWRdjSCbFHQJmkK9WCdxCa",
       },
+      // params: {
+      //   request_no: id,
+      // },
     })
     .then((res) => res.data)
     .catch((error) => {
@@ -262,7 +266,8 @@ export const getRequestOTP = async (phoneNumber: any) => {
 
 export const getRequestByGUID = async (guid?: any) => {
   let res = await apiInstance
-    .get(`FrontEnd/ICSY3GetRequestByGUID`, {
+    // .get(`FrontEnd/ICSY3GetRequestByGUID`, {
+    .get(`https://ics-y3-dev.pea.co.th/api-external/requests/${guid}`, {
       headers: {
         Apikey: "MEvyDTsh3BQWRdjSCbFHQJmkK9WCdxCa",
       },
@@ -284,12 +289,21 @@ export const getRequestByGUID = async (guid?: any) => {
   return res;
 };
 
-export const verifyOTP = async (otpId: any, otp: any) => {
+export const verifyOTP = async (
+  otpId: any,
+  otp: any,
+  request_no?: any,
+  phone?: any
+) => {
   let res = await apiInstance
     .get("FrontEnd/VerifyOTP", {
       params: {
         otpId: otpId,
         otp: otp,
+        // idcard: "240703000004",
+        // phone: "0985569390",
+        idcard: request_no,
+        phone: phone,
       },
     })
     .then((res) => res.data)
@@ -336,6 +350,45 @@ export const getServicesItems = async (id: any) => {
         services_id: id,
       },
     })
+    .then((res) => res.data)
+    .catch((error) => {
+      const msg = error?.response?.data?.message
+        ? error?.response?.data?.message
+        : error.message;
+      return {
+        status: false,
+        data: null,
+        message: msg,
+      };
+    });
+  return res;
+};
+
+export const updateEmail = async (form: any) => {
+  let res = await apiInstance
+    .put(
+      "https://cms-serviced-dev.pea.co.th/api/v1.0/FrontEnd/ICSY3UpdateEmail",
+      form
+    )
+    .then((res) => res.data)
+    .catch((error) => {
+      const msg = error?.response?.data?.message
+        ? error?.response?.data?.message
+        : error.message;
+      return {
+        status: false,
+        data: null,
+        message: msg,
+      };
+    });
+  return res;
+};
+
+export const updateQuotation = async (id: any) => {
+  let res = await apiInstance
+    .post(
+      `https://cms-serviced-dev.pea.co.th/api/v1.0/FrontEnd/Quotation/${id}`
+    )
     .then((res) => res.data)
     .catch((error) => {
       const msg = error?.response?.data?.message

@@ -40,6 +40,7 @@ const StepProgressBar = (props: any) => {
     });
     // return Number((countComplete * 100) / 6);
     // return Math.floor((countComplete * 100) / 6);
+    console.log(guidData?.requests?.status);
 
     if (
       guidData?.requests?.status === "D" ||
@@ -58,25 +59,14 @@ const StepProgressBar = (props: any) => {
     }
     if (
       guidData?.requests?.status === "I" ||
-      guidData?.requests?.status === "S"
-    ) {
-      // console.log("t");
-      if (guidData?.requests?.status === "I") lengthProgressBar = 3;
-      else if (guidData?.requests?.status === "S") lengthProgressBar = 4;
-
-      if (dataStatus?.length === 0) {
-        for (let i = 0; i < lengthProgressBar; i++) {
-          dataStatus.push(guidData?.all_status[i]);
-        }
-      }
-      return 22;
-    }
-    if (
+      guidData?.requests?.status === "S" ||
       guidData?.requests?.status === "Q" ||
       guidData?.requests?.status === "N"
     ) {
       // console.log("t");
-      if (guidData?.requests?.status === "Q") lengthProgressBar = 5;
+      if (guidData?.requests?.status === "I") lengthProgressBar = 3;
+      else if (guidData?.requests?.status === "S") lengthProgressBar = 4;
+      else if (guidData?.requests?.status === "Q") lengthProgressBar = 5;
       else if (guidData?.requests?.status === "N") lengthProgressBar = 6;
 
       if (dataStatus?.length === 0) {
@@ -84,7 +74,7 @@ const StepProgressBar = (props: any) => {
           dataStatus.push(guidData?.all_status[i]);
         }
       }
-      return 40;
+      return 22;
     }
     if (
       guidData?.requests?.status === "A" ||
@@ -99,15 +89,23 @@ const StepProgressBar = (props: any) => {
           dataStatus.push(guidData?.all_status[i]);
         }
       }
-      return 62;
+      return 40;
     }
-    if (
-      guidData?.requests?.status === "P" ||
-      guidData?.requests?.status === "F"
-    ) {
+    if (guidData?.requests?.status === "P") {
       // console.log("t");
       if (guidData?.requests?.status === "P") lengthProgressBar = 9;
-      else if (guidData?.requests?.status === "F") lengthProgressBar = 10;
+
+      if (dataStatus?.length === 0) {
+        for (let i = 0; i < lengthProgressBar; i++) {
+          dataStatus.push(guidData?.all_status[i]);
+        }
+      }
+      return 62;
+    }
+    if (guidData?.requests?.status === "F") {
+      // console.log("t");
+
+      if (guidData?.requests?.status === "F") lengthProgressBar = 10;
 
       if (dataStatus?.length === 0) {
         for (let i = 0; i < lengthProgressBar; i++) {
@@ -157,7 +155,33 @@ const StepProgressBar = (props: any) => {
     }
   };
 
-  console.log(statusTracking);
+  // console.log(statusTracking);
+
+  let statusName = [];
+  console.log(dataStatus?.length);
+  if (statusName?.length >= 0) {
+    if (dataStatus?.length >= 0) {
+      statusName.push("รับคำร้อง");
+    }
+    if (dataStatus?.length >= 3) {
+      statusName.push("สำรวจ/ประมาณค่าใช้จ่าย");
+    }
+    if (dataStatus?.length >= 7) {
+      statusName.push("รอชำระเงิน");
+    }
+    if (dataStatus?.length >= 9) {
+      statusName.push("ชำระเงินแล้ว");
+    }
+    if (dataStatus?.length >= 10) {
+      statusName.push("อยู่ระหว่างดำเนินการ");
+    }
+    if (dataStatus?.length >= 11) {
+      statusName.push("ยกเลิก");
+    }
+    // if (dataStatus?.length === 13) {
+    //   statusName.push("อยู่ระหว่างดำเนินงาน");
+    // }
+  }
 
   return (
     <div className="mt-8 mb-28 ml-24 mr-[78px]">
@@ -392,45 +416,55 @@ const StepProgressBar = (props: any) => {
         // filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
       >
         {statusTemplate.map((d, i) => {
+          // if (dataStatus[0] && dataStat)
+
           return (
             <Step transition="scale">
-              {({ accomplished }) => (
-                <div
-                  className={
-                    accomplished
-                      ? "bg-white w-10 h-10 border-none rounded-full"
-                      : "bg-gray-200  border-none rounded-full"
-                  }
-                >
-                  <RiCheckboxCircleFill
-                    className={`indexedStep ${
+              {({ accomplished }) => {
+                return (
+                  <div
+                    className={
                       accomplished
-                        ? "accomplished w-10 h-10 text-[#8e0369] rounded-full  "
-                        : "text-gray-200 w-10 h-10"
-                    }`}
-                    size={70}
-                  />
-                  {accomplished ? (
-                    <>
-                      <div className="w-[200px] -ml-8 text-center text-large   font-extrabold my-1">
-                        {dataStatus[i] ? dataStatus[i * 2]?.e_service_name : ""}
+                        ? "bg-white w-10 h-10 border-none rounded-full"
+                        : "bg-gray-200  border-none rounded-full"
+                    }
+                  >
+                    <RiCheckboxCircleFill
+                      className={`indexedStep ${
+                        accomplished
+                          ? "accomplished w-10 h-10 text-[#8e0369] rounded-full  "
+                          : "text-gray-200 w-10 h-10"
+                      }`}
+                      size={70}
+                    />
+                    {accomplished ? (
+                      <div className="">
+                        {/* <div className="w-[200px] -ml-8 text-center text-large   font-extrabold my-1"> */}
+                        <div className="text-center lg:w-[210px] lg:-ml-20 font-bold my-1 lg:text-xl">
+                          {/* {dataStatus[i] ? dataStatus[i * 2]?.e_service_name : ""} */}
+                          {statusName[i] ? statusName[i] : ""}
+                        </div>
+                        <div className="text-center lg:w-[100px] lg:-ml-8 font-medium text-[#424957]">
+                          {dataStatus[i]
+                            ? dataStatus[i].updated_date
+                              ? dateComplete(dataStatus[i].updated_date)
+                              : ""
+                            : ""}
+                        </div>
+                        <div className="lg:w-[100px] text-center  -ml-8 font-medium text-[#424957]">
+                          {dataStatus[i]
+                            ? dataStatus[i].updated_date
+                              ? timeComplete(dataStatus[i].updated_date)
+                              : ""
+                            : ""}
+                        </div>
                       </div>
-                      <div className="w-[100px] text-center  -ml-8 font-medium text-[#424957]">
-                        {dataStatus[i]
-                          ? dateComplete(dataStatus[i].updated_date)
-                          : ""}
-                      </div>
-                      <div className="w-[100px] text-center  -ml-8 font-medium text-[#424957]">
-                        {dataStatus[i]
-                          ? timeComplete(dataStatus[i].updated_date)
-                          : ""}
-                      </div>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              )}
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                );
+              }}
             </Step>
           );
         })}

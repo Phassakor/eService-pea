@@ -55,6 +55,8 @@ import receiptLogo from "@/app/asset/receipt-logo.png";
 import { getRequestByGUID, getRequestList } from "@/api/api";
 import { updateRequestId } from "@/redux/Reducer";
 import submenu from "@/public/submenu.json";
+import { updateEmail } from "@/api/api";
+import { updateQuotation } from "@/api/api";
 
 const StatusTableDetail = (props: any) => {
   const params = useParams();
@@ -85,8 +87,8 @@ const StatusTableDetail = (props: any) => {
     const requestListData = await getRequestList(requestIdValue);
     setIsLoad(false);
 
-    if (requestListData?.status) {
-      setRequestData(requestListData.data ? requestListData.data : []);
+    if (requestListData?.result) {
+      setRequestData(requestListData.datas ? requestListData.datas : []);
     }
 
     dispatch(updateRequestId(requestId));
@@ -102,7 +104,7 @@ const StatusTableDetail = (props: any) => {
   const fetchGUID = async (guid: any) => {
     const requestGUID = await getRequestByGUID(guid?.request_id);
     if (requestGUIDData?.length === 0)
-      setRequestGUIDData(requestGUID.data ? requestGUID.data : []);
+      setRequestGUIDData(requestGUID.datas ? requestGUID.datas : []);
   };
 
   let count = 0;
@@ -186,7 +188,10 @@ const StatusTableDetail = (props: any) => {
       <div className="rounded-t w-full bg-[#4E4E4E] font-semibold text-white py-3 pl-4 p">
         รับใบเสนอราคา
       </div>
-      <ModalQuotation btnName={"ผ่านทางอีเมล"} />
+      <ModalQuotation
+        btnName={"ผ่านทางอีเมล"}
+        requestIdValue={requestIdValue}
+      />
       <div className="bg-[#E4E6E8] w-full h-[1px]"></div>
       <Button
         className="w-full bg-white text-black lg:text-base text-large font-NotoSansThai rounded-none font-light"

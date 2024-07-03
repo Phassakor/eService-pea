@@ -6,6 +6,14 @@ import { useAppSelector } from "@/redux/store";
 import Submenu from "./Submenu";
 import { MenuServeice } from "@/Interfaces/propsInterface";
 import { getFile } from "@/api/api";
+import { useDispatch } from "react-redux";
+import {
+  updateIsMobileSearch,
+  updateSearchInput,
+  updateSelectedMenu,
+  updateSelectedSubmenu,
+} from "@/redux/Reducer";
+import { useRouter } from "next/navigation";
 
 const SearchMenu = (props: any) => {
   const [search, setSearch] = useState<any[]>([]);
@@ -16,10 +24,18 @@ const SearchMenu = (props: any) => {
       url: "/status",
     },
   ];
+
+  const dataGroupService = useAppSelector((state) => state.categoryReducer);
   const dataMenuAll = useAppSelector((state) => state.menuServiceReducer);
-  const serviceAll = dataMenuAll.concat(followStatus);
+  let serviceAllContainGroupService = dataGroupService.concat(dataMenuAll);
+
+  // const serviceAll = dataMenuAll.concat(followStatus);
+  const serviceAll = serviceAllContainGroupService.concat(followStatus);
   const data = serviceAll; //props.data;
-  const searchText = props.searchText;
+
+  // console.log(data);
+
+  let searchText = props.searchText;
   let checkDup: any[] = [];
 
   function searchMenu(text: any) {

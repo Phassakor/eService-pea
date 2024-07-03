@@ -19,10 +19,25 @@ import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
+import { updateEmail } from "@/api/api";
+import { updateQuotation } from "@/api/api";
 
 const ModalQuotation = (props: any) => {
   const [isSend, setIsSend] = useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [email, setEmail] = useState("");
+
+  const fetchUpdateEmail = async () => {
+    await updateEmail({
+      request_no: props?.requestIdValue,
+      email: email,
+    });
+  };
+
+  const fetchUpdateQuotation = async () => {
+    await updateQuotation(props?.requestIdValue);
+  };
+
   return (
     <>
       <Button
@@ -57,6 +72,8 @@ const ModalQuotation = (props: any) => {
                   <Input
                     className="w-full"
                     key={""}
+                    value={email}
+                    onValueChange={setEmail}
                     radius="sm"
                     type="email"
                     placeholder="อีเมล"
@@ -79,6 +96,8 @@ const ModalQuotation = (props: any) => {
                     className="bg-[#8E0369] text-white font-NotoSansThai rounded-lg"
                     onPress={() => {
                       setIsSend(true);
+                      fetchUpdateEmail();
+                      fetchUpdateQuotation();
                     }}
                   >
                     <div className="font-NotoSansThai font-semibold text-lg px-4">
