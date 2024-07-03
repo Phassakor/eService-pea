@@ -173,7 +173,7 @@ const ServiceDetail = (props: any) => {
                       >
                         <Button
                           className="bg-[#C7C7C7] text-white w-full rounded"
-                          onClick={() => router.push("/")}
+                          onClick={() => router.back()}
                         >
                           ย้อนกลับ
                         </Button>
