@@ -46,8 +46,8 @@ const StatusMenu = (props: any) => {
                   ขอรับใบกำกับภาษีอิเล็กทรอนิกส์ (e-Tax)
                   สำหรับธุรกิจเกี่ยวเนื่อง
                 </div>
-                <div className="flex flex-col lg:mx-[210px] 2xl:mx-[420px] mx-8">
-                  <div className=" mb-4">
+                <div className="flex flex-col lg:mx-[210px] 2xl:mx-[280px] xl:mx-[250px] mx-8">
+                  <div className="mb-4">
                     <Input
                       radius="sm"
                       label="request no."
