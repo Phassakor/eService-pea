@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans Thai";
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-size: 16px;
+  --clr-indigo: #8e0369;
+  --clr-black: #000;
+  --clr-gray: #c7c7c7;
+  --clr-indigo-dark: #68326b;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --border-input-radius: 8px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.text-header-card {
+  @apply font-bold lg:text-2xl text-large text-[var(--clr-indigo)] mb-1;
+}
+.text-title-card {
+  @apply font-bold lg:text-xl text-xl text-[var(--clr-indigo)] mb-1;
+}
+.text-sub-title-card {
+  @apply font-bold lg:text-base text-[var(--clr-black)] mb-1;
+}
+.text-label {
+  @apply lg:text-base text-[var(--clr-black)] mb-1;
+}
+.text-button {
+  @apply text-white w-full rounded-lg p-[10px_20px] text-base leading-7 font-bold;
+}
+.padding-card-body {
+  @apply p-[1.875rem_4.5rem_3.125rem_1.75rem] max-md:p-[1.875rem_1.75rem];
+}
+.border-input {
+  @apply border-1 border-solid border-[var(--clr-indigo-dark)];
+}
+
+.padding-card-header {
+  @apply p-[2.375rem_1.75rem] max-md:p-[1.5rem_1.75rem];
+}
+@layer components {
+}
+.box-card-time {
+  @apply flex flex-col gap-6 mt-[26px] mb-[30px];
+}
+/*------------Custom Calendar------------------*/
+.ep-arrow.rmdp-ep-arrow.rmdp-ep-shadow {
+  display: none;
+}
+.custom-date-picker .rmdp-week-day {
+  color: #000 !important;
+}
+.custom-date-picker .rmdp-range {
+  background-color: #e3d3df !important;
+  box-shadow: unset !important;
+  color: #20293a !important;
+}
+
+.custom-date-picker .range.start:not(.force),
+.custom-date-picker .rmdp-range.start:not(.force),
+.custom-date-picker .rmdp-range.end:not(.force) {
+  border-radius: unset !important;
+  background-color: #8e0369 !important;
+  color: #ffffff !important;
+}
+.custom-date-picker .rmdp-day span {
+  border-radius: unset !important;
+}
+
+.purple .rmdp-day:not(.rmdp-day-hidden) span:hover {
+  background-color: var(--rmdp-hover-purple) !important;
+}
+
+.data-\[selectable\=true\]\:focus\:bg-default:focus[data-selectable="true"] {
+  background-color: #d8a2e4 !important;
+  color: #ffffff !important;
+}
+
+/*----loader--------*/
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  /* background-color: rgba(255, 0, 0, 0.3); */
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.overlay__inner {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.overlay__content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+  border-width: 3px;
+  border-color: rgba(255, 255, 255, 0.05);
+  border-top-color: rgb(142, 3, 105);
+  animation: spin 1s infinite linear;
+  border-radius: 100%;
+  border-style: solid;
+}
+.disabled\:opacity-40:disabled {
+  opacity: 1 !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-disabled {
+  color: rgba(0, 0, 0, 1) !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  background: none !important;
+}
+.opacity-disabled {
+  opacity: 1 !important;
+}
+.disabled\:bg-slate-50:disabled {
+  background-color: unset !important;
+}
+.disabled\:text-slate-500:disabled {
+  color: unset !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+ol, ul, menu{
+  list-style: disc;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}

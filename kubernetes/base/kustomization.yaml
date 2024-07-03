@@ -1,0 +1,5 @@
+resources:
+  - manifest.yaml
+  - secret.yaml
+  - configmap.yaml
+vars:

@@ -1,0 +1,342 @@
+[
+  [
+    {
+      "title": "ลูกค้าบ้านอยู่อาศัย",
+      "logo": "/asset/menu-1.png"
+    },
+    {
+      "title": "ลูกค้าธุรกิจ/อุตสาหกรรม/ราชการ",
+      "logo": "/asset/menu-2.png"
+    },
+    {
+      "title": "บริการ EV และ Solar",
+      "logo": "/asset/menu-3.png"
+    },
+    {
+      "title": "บริการทดสอบและสอบเทียบอุปกรณ์ไฟฟ้า",
+      "logo": "/asset/menu-4.png"
+    },
+    {
+      "title": "บริการตรวจสอบและบำรุงรักษาระบบไฟฟ้า",
+      "logo": "/asset/menu-5.png"
+    },
+    {
+      "title": "บริการจัดหาและให้เช่าอุปกรณ์ไฟฟ้า",
+      "logo": "/asset/menu-6.png"
+    },
+    {
+      "title": "บริการก่อสร้างและติดตั้งระบบไฟฟ้า",
+      "logo": "/asset/menu-7.png"
+    },
+    {
+      "title": "บริการอื่นๆ",
+      "logo": "/asset/menu-8.png"
+    }
+  ],
+  [
+    {
+      "title": "บริการขอใช้ไฟฟ้าใหม่",
+      "logo": "/asset/submenu/1/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการรับชำระค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "PEA e-Bill",
+      "logo": "/asset/submenu/1/menu-3.png",
+      "description": "ลงทะเบียนรับเอกสารอิเล็กทรอนิกส์ (ใบแจ้งค่าไฟฟ้า, ใบเสร็จรับเงิน, ใบกำกับภาษี)",
+      "url": "/service"
+    },
+    {
+      "title": "บริการลงทะเบียนขอผ่อนชำระค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-4.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการสอบถามประวัติการใช้ไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-5.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการประมาณการค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-6.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการขอคืนเงินประกันการใช้ไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-7.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/1/menu-8.png",
+      "url": "/status"
+    },
+    {
+      "title": "แนะนำ/ร้องเรียน",
+      "logo": "/asset/submenu/1/menu-9.png",
+      "description": "แนะนำหรือร้องเรียนการบริการ",
+      "url": "https://complaint.pea.co.th/"
+    }
+  ],
+  [
+    {
+      "title": "บริการขอใช้ไฟฟ้าใหม่",
+      "logo": "/asset/submenu/1/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการรับชำระค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "PEA e-Bill",
+      "logo": "/asset/submenu/1/menu-3.png",
+      "description": "ลงทะเบียนรับเอกสารอิเล็กทรอนิกส์(ใบแจ้งค่าไฟฟ้า,ใบเสร็จรับเงิน,ใบกำกับภาษี)",
+      "url": "/service"
+    },
+    {
+      "title": "บริการลงทะเบียนขอผ่อนชำระค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-4.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการสอบถามประวัติการใช้ไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-5.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการประมาณการค่าไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-6.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการขอคืนเงินประกันการใช้ไฟฟ้า",
+      "logo": "/asset/submenu/1/menu-7.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/1/menu-8.png",
+      "url": "/status"
+    },
+    {
+      "title": "แนะนำ/ร้องเรียน",
+      "logo": "/asset/submenu/1/menu-9.png",
+      "description": "แนะนำหรือร้องเรียนการบริการ",
+      "url": "https://complaint.pea.co.th/"
+    }
+  ],
+  [
+    {
+      "title": "บริการออกแบบและติดตั้งระบบผลิตไฟฟ้าจากพลังงานแสงอาทิตย์",
+      "logo": "/asset/submenu/3/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "ตรวจสอบจุดเชื่อมโยง",
+      "logo": "/asset/submenu/3/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอซื้อขายใบรับรองการผลิตพลังงานหมุนเวียน",
+      "logo": "/asset/submenu/3/menu-3.png",
+      "url": "/service"
+    },
+    {
+      "title": "ตรวจสอบและทดสอบสถานีอัดประจุไฟฟ้า",
+      "logo": "/asset/submenu/3/menu-4.png",
+      "url": "/service"
+    },
+    {
+      "title": "จัดหาเต้ารับสำหรับชาร์จรถยนต์ไฟฟ้า (Pupaplug)",
+      "logo": "/asset/submenu/3/menu-5.png",
+      "url": "/service"
+    },
+    {
+      "title": "ออกแบบและติดตั้งสถานีอัดประจุไฟฟ้า EV Charging Station",
+      "logo": "/asset/submenu/3/menu-6.png",
+      "url": "/service"
+    },
+    {
+      "title": "Digital Platform บริหารจัดการการอัดประจุไฟฟ้า (PEA Volta Platform)",
+      "logo": "/asset/submenu/3/menu-7.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/3/menu-8.png",
+      "url": "/status"
+    }
+  ],
+  [
+    {
+      "title": "ขอทดสอบหม้อแปลงไฟฟ้า",
+      "logo": "/asset/submenu/4/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอทดสอบอุปกรณ์ไฟฟ้า",
+      "logo": "/asset/submenu/4/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอติดตั้งมิเตอร์เปรียบเทียบ กรณีผิดปกติ",
+      "logo": "/asset/submenu/4/menu-3.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/4/menu-4.png",
+      "url": "/status"
+    }
+  ],
+  [
+    {
+      "title": "บริการตรวจสอบและบำรุงรักษาสวิตซ์เกียร์",
+      "logo": "/asset/submenu/5/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการตรวจสอบและบำรุงรักษาเคเบิล",
+      "logo": "/asset/submenu/5/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการตรวจสอบและบำรุงรักษารีเลย์",
+      "logo": "/asset/submenu/5/menu-3.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอตรวจสอบระบบไฟฟ้าและออกใบรับรอง",
+      "logo": "/asset/submenu/5/menu-4.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอตรวจหาจุดร้อน / จุดสัมผัสทางไฟฟ้า",
+      "logo": "/asset/submenu/5/menu-5.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอตรวจสอบและบำรุงรักษาระบบไฟฟ้าแบบครบวงจร",
+      "logo": "/asset/submenu/5/menu-6.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอแก้กระแสไฟฟ้าขัดข้อง",
+      "logo": "/asset/submenu/5/menu-7.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอแก้ไขบำรุงรักษาระบบจำหน่าย",
+      "logo": "/asset/submenu/5/menu-8.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอบำรุงรักษาหม้อแปลงไฟฟ้า",
+      "logo": "/asset/submenu/5/menu-9.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอแก้ไข / บำรุงรักษาระบบจำหน่ายโดย Hotline",
+      "logo": "/asset/submenu/5/menu-10.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอซ่อมแซมอุปกรณ์ไฟฟ้า",
+      "logo": "/asset/submenu/5/menu-11.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอที่ปรึกษาด้านวิศวกรรมและตรวจรับรองระบบไฟฟ้า",
+      "logo": "/asset/submenu/5/menu-12.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/5/menu-13.png",
+      "url": "/status"
+    }
+  ],
+  [
+    {
+      "title": "ขอซื้อมิเตอร์/อุปกรณ์ไฟฟ้า",
+      "logo": "/asset/submenu/6/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอเช่าเครื่องกำเนิดไฟฟ้า",
+      "logo": "/asset/submenu/6/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอติดตั้งมิเตอร์เปรียบเทียบ TOU",
+      "logo": "/asset/submenu/6/menu-3.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอเช่าหม้อแปลงไฟฟ้า",
+      "logo": "/asset/submenu/6/menu-4.png",
+      "url": "/service"
+    },
+    {
+      "title": "ขอเช่าฉนวนครอบสายไฟฟ้า",
+      "logo": "/asset/submenu/6/menu-5.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/6/menu-6.png",
+      "url": "/status"
+    }
+  ],
+  [
+    {
+      "title": "บริการที่ปรึกษาด้านวิศวกรรมและก่อสร้าง",
+      "logo": "/asset/submenu/7/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/7/menu-2.png",
+      "url": "/status"
+    }
+  ],
+  [
+    {
+      "title": "บริการฝึกอบรม",
+      "logo": "/asset/submenu/8/menu-1.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการข้อมูล Load Profile",
+      "logo": "/asset/submenu/8/menu-2.png",
+      "url": "/service"
+    },
+    {
+      "title": "บริการทดสอบผลิตภัณฑ์คอนกรีต",
+      "logo": "/asset/submenu/8/menu-3.png",
+      "url": "/service"
+    },
+    {
+      "title": "ติดตามสถานะ",
+      "logo": "/asset/submenu/8/menu-4.png",
+      "url": "/status"
+    },
+    {
+      "title": "แนะนำ/ร้องเรียน",
+      "logo": "/asset/submenu/8/menu-5.png",
+      "description": "แนะนำหรือร้องเรียนการบริการ",
+      "url": "https://complaint.pea.co.th/"
+    },
+    {
+      "title": "ขอบริการอื่นๆ",
+      "logo": "/asset/submenu/8/menu-6.png",
+      "url": "/service"
+    }
+  ]
+]

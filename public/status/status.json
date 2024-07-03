@@ -1,0 +1,17 @@
+[
+  {
+    "title": "สถานะขอใช้ไฟฟ้า",
+    "logo": "/asset/status/menu-1.png",
+    "url": "https://eservice.pea.co.th/cos/checkstatus/"
+  },
+  {
+    "title": "การดำเนินงานขยายเขตระบบไฟฟ้า",
+    "logo": "/asset/status/menu-2.png",
+    "url": "https://eservice.pea.co.th/Expansion/CheckStatus"
+  },
+  {
+    "title": "สถานะธุรกิจที่เกี่ยวเนี่อง",
+    "logo": "/asset/status/menu-3.png",
+    "url": "/status/business-status"
+  }
+]
