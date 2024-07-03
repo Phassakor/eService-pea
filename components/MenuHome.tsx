@@ -114,7 +114,7 @@ const MenuHome = (props: any) => {
         <>
           {selectedMenu === false && searchInputText === "" ? (
             <div className=" 2xl:mt-6 lg:px-60 mx-2 mt-2 mb-12 rounded-md">
-              <div className="shadow-lg 2xl:mx-28 2xl:grid   2xl:grid-cols-3 grid lg:grid-cols-3  grid-cols-2">
+              <div className="shadow-lg 2xl:mx-28 2xl:grid 2xl:grid-cols-3 grid lg:grid-cols-3 grid-cols-2 rounded-[16px] overflow-hidden">
                 {data?.map(async (x: any, i: Number) => (
                   <div
                     className="bg-white hover:bg-[#F6EBF3] cursor-pointer 2xl:py-16 lg:py-8 py-4 border-r  border-b border-slate-200"
