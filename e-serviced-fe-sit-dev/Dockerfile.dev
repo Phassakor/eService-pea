@@ -1,0 +1,63 @@
+# Use the Node.js 20 Alpine image as a base for building
+FROM node:20-alpine AS builder
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci 
+
+# Retry npm install for a maximum of 10 times ###
+RUN retries=0; \
+    until npm install sharp@0.32.1 --arch=x64 --platform=linux --libc=musl || [ $retries -eq 10 ]; do \
+        echo "Retrying npm install (Attempt $((retries++)))"; \
+    done
+
+
+# Copy the rest of your Next.js app's source code
+COPY . .
+
+ARG ENV_KEYS
+RUN echo ${ENV_KEYS}
+ENV ENV_KEYS=${ENV_KEYS}
+
+ARG ENV_VALUES
+RUN echo ${ENV_VALUES}
+ENV ENV_VALUES=${ENV_VALUES}
+
+RUN chmod +x ./env.sh
+RUN ./env.sh
+
+# Build your Next.js app for production
+RUN npm run build
+
+# Use Node.js 20 Alpine for the runner stage to keep the image size small
+FROM node:20-alpine AS runner
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Create a new user "nextjs" and avoid running the app as root user for security
+RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
+
+# Copy the build artifacts from the builder stage
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Change the ownership of the working directory to the non-root user (nextjs)
+RUN chown -R nextjs:nextjs /app
+
+# Switch to the non-root user
+USER nextjs
+
+# Expose the port Next.js runs on
+EXPOSE 3000
+
+# Command to run the Next.js application in production mode #
+CMD ["npm", "run", "start"]
